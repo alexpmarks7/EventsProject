@@ -5692,11 +5692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\Engineering73\\Core\\Main_Project\\Events_Project\\Events_Project_GUI\\EventsProjectGUI.csproj",
+      "projectUniqueName": "C:\\GitHub\\Main_Project\\Events_Project\\Events_Project_GUI\\EventsProjectGUI.csproj",
       "projectName": "EventsProjectGUI",
-      "projectPath": "C:\\GitHub\\Engineering73\\Core\\Main_Project\\Events_Project\\Events_Project_GUI\\EventsProjectGUI.csproj",
+      "projectPath": "C:\\GitHub\\Main_Project\\Events_Project\\Events_Project_GUI\\EventsProjectGUI.csproj",
       "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\Engineering73\\Core\\Main_Project\\Events_Project\\Events_Project_GUI\\obj\\",
+      "outputPath": "C:\\GitHub\\Main_Project\\Events_Project\\Events_Project_GUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5712,8 +5712,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\GitHub\\Engineering73\\Core\\Main_Project\\Events_Project\\CRUDManager\\EventsProjectBusiness.csproj": {
-              "projectPath": "C:\\GitHub\\Engineering73\\Core\\Main_Project\\Events_Project\\CRUDManager\\EventsProjectBusiness.csproj"
+            "C:\\GitHub\\Main_Project\\Events_Project\\CRUDManager\\EventsProjectBusiness.csproj": {
+              "projectPath": "C:\\GitHub\\Main_Project\\Events_Project\\CRUDManager\\EventsProjectBusiness.csproj"
             }
           }
         }

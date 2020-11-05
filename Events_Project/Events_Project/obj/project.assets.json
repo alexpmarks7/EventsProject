@@ -5726,11 +5726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\Engineering73\\Core\\Main_Project\\Events_Project\\Events_Project\\EventsProject.csproj",
+      "projectUniqueName": "C:\\GitHub\\Main_Project\\Events_Project\\Events_Project\\EventsProject.csproj",
       "projectName": "EventsProject",
-      "projectPath": "C:\\GitHub\\Engineering73\\Core\\Main_Project\\Events_Project\\Events_Project\\EventsProject.csproj",
+      "projectPath": "C:\\GitHub\\Main_Project\\Events_Project\\Events_Project\\EventsProject.csproj",
       "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\Engineering73\\Core\\Main_Project\\Events_Project\\Events_Project\\obj\\",
+      "outputPath": "C:\\GitHub\\Main_Project\\Events_Project\\Events_Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",

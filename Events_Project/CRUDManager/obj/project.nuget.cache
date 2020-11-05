@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XpEnkU/xFfKT3hrEFiFaJffeonA2X+OgLLt1DAwv8+SOBM+yrN+46OMu5eMnmeBzXlwhiTt34hXbpz9z9/VlBw==",
+  "dgSpecHash": "uyrGAnf+s0a6HbXJQnV2RCab3DDHvbF2v8Ec4abgrRmWEyglecTFXQ2x9xq0ZF5WszLBB1KDPrBfn+6feStrEg==",
   "success": true,
-  "projectFilePath": "C:\\GitHub\\Engineering73\\Core\\Main_Project\\Events_Project\\CRUDManager\\EventsProjectBusiness.csproj",
+  "projectFilePath": "C:\\GitHub\\Main_Project\\Events_Project\\CRUDManager\\EventsProjectBusiness.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexp\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\alexp\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
