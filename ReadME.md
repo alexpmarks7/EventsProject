@@ -105,6 +105,7 @@ Above is the Project Board with most of the sprint completed, prior to being rev
 - the sprint started slowly but progressed well, with a implementable GUI performing the methods required
 - more functionality could have been added to the business layer, to create a more "complete" GUI, closer to the expected final product
 - planning and building the database was not trouble free.  Database may have to be redesigned in a further sprint
+- GUI layer needs better direction as to how it's final appearance will be - this required more thought and planning from the start
 
 
 
