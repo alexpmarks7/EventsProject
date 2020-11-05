@@ -86,7 +86,7 @@ The start of the sprint began with defining my Acceptance Criteria for each User
 
 <img src="C:\GitHub\Main Project Images\ERD.PNG" style="zoom:75%;" /> 
 
-This ERD was implemented and a database was built using .............................
+This ERD was implemented and a database was built using the Model First approach
 
 User Stories were turned into functional methods within the business layer and all methods were tested.
 

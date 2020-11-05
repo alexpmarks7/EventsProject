@@ -9,11 +9,19 @@ namespace EventsProjectBusiness
 	public class CRUDManager
 	{
 		public Venue SelectedVenue { get; set; }
+		public Event SelectedEvent { get; set; }
+		public Sport SelectedSport { get; set; }
+		public Music SelectedMusic { get; set; }
 
 		public void SetSelectedVenue(object selectedItem)
 		{
 			SelectedVenue = (Venue)selectedItem;
 		}
+		public void SetSelectedEvent(object selectedItem)
+		{
+			SelectedEvent = (Event)selectedItem;
+		}
+
 		public List<Venue> RetrieveVenues()
 		{
 			using (var db = new EventsProjectContext())
@@ -21,6 +29,28 @@ namespace EventsProjectBusiness
 				return db.Venues.ToList();
 			}
 		}
+		public List<Event> RetrieveEvents()
+		{
+			using (var db = new EventsProjectContext())
+			{
+				return db.Events.ToList();
+			}
+		}
+		public List<Sport> RetrieveSports()
+		{
+			using (var db = new EventsProjectContext())
+			{
+				return db.Sports.ToList();
+			}
+		}
+		public List<Music> RetrieveMusic()
+		{
+			using (var db = new EventsProjectContext())
+			{
+				return db.Musics.ToList();
+			}
+		}
+
 
 
 		// method to create a new venue, ensuring the ID is 5 letters long and capacity is not negative

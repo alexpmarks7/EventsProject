@@ -26,13 +26,13 @@ namespace EventsProject
         public string Country { get; set; }
         public int Capacity { get; set; }
     }
-    public class Event
+    public partial class Event
     {
         public string EventId { get; set; }
         public string EventTypeName { get; set; }
     }
 
-    public class Sport
+    public partial class Sport
     {
         public Event Event { get; set; }
         public Venue Venue { get; set; }
@@ -45,7 +45,7 @@ namespace EventsProject
         public int TicketsSold { get; set; }
     }
 
-    public class Music
+    public partial class Music
     {
         public Event Event { get; set; }
         public string EventId { get; set; }

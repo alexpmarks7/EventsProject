@@ -141,7 +141,7 @@ namespace EventsProjectGUI {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/EventsProjectGUI;V1.0.0.0;component/newvenuewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/EventsProjectGUI;component/newvenuewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\NewVenueWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

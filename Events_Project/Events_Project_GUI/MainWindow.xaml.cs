@@ -28,10 +28,26 @@ namespace Events_Project_GUI
 		{
 			InitializeComponent();
 			PopulateVenueBox();
+			PopulateEventDropBox();
+			//PopulateEventListBoxWithSport();
+			
 		}
 		private void PopulateVenueBox()
 		{
 			VenueListBox.ItemsSource = _crudManager.RetrieveVenues();
+		}
+		
+		private void PopulateEventDropBox()
+		{
+			EventDropBox.ItemsSource = _crudManager.RetrieveEvents();
+		}
+		private void PopulateEventListBoxWithSport()
+		{
+			EventListBox.ItemsSource = _crudManager.RetrieveSports();
+		}
+		private void PopulateEventListBoxWithMusic()
+		{
+			EventListBox.ItemsSource = _crudManager.RetrieveMusic();
 		}
 		private void PopulateVenueFields()
 		{
@@ -124,6 +140,26 @@ namespace Events_Project_GUI
 				EditButton.IsEnabled = false;
 
 			}
+		}
+
+		private void EventDropBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (EventDropBox.SelectedItem != null)
+			{
+				if (EventDropBox.SelectedItem.ToString() == "Sport")
+				{
+					PopulateEventListBoxWithSport();
+				}
+				if (EventDropBox.SelectedItem.ToString() == "Music")
+				{
+					PopulateEventListBoxWithMusic();
+				}
+			}
+		}
+
+		private void EventsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			
 		}
 	}
 }
