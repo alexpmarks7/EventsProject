@@ -1,0 +1,53 @@
+﻿<Window x:Class="Events_Project_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Events_Project_GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid Grid.Column="1">
+			<ListBox x:Name="VenueListBox" SelectionChanged="VenueSelectionChanged"></ListBox>
+		</Grid>
+		<Grid Grid.Column="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<Label x:Name="VenueID" Grid.Row="0" Grid.Column="0">Venue ID</Label>
+			<Label x:Name="VenueName" Grid.Row="1" Grid.Column="0">Name</Label>
+			<Label x:Name="VenueCity" Grid.Row="2" Grid.Column="0">City</Label>
+			<Label x:Name="VenueCountry" Grid.Row="3" Grid.Column="0">Country</Label>
+			<Label x:Name="VenueCapacity" Grid.Row="4" Grid.Column="0">Capacity</Label>
+
+			<TextBox x:Name="VenueIDText" Grid.Row="0" Grid.Column="1" IsReadOnly="True"></TextBox>
+			<TextBox x:Name="VenueNameText" Grid.Row="1" Grid.Column="1" IsReadOnly="True"></TextBox>
+			<TextBox x:Name="VenueCityText" Grid.Row="2" Grid.Column="1" IsReadOnly="True"></TextBox>
+			<TextBox x:Name="VenueCountryText" Grid.Row="3" Grid.Column="1" IsReadOnly="True"></TextBox>
+			<TextBox x:Name="VenueCapacityText" Grid.Row="4" Grid.Column="1" IsReadOnly="True"></TextBox>
+
+			<Button x:Name="AddVenueButton" Grid.Row="5" Grid.Column="0" Click="AddVenueButton_Click">Add Venue</Button>
+			<Button x:Name="RemoveVenueButton" Grid.Row="5" Grid.Column="1" Click="RemoveVenueButton_Click">Remove Venue</Button>
+			<Button x:Name="RefreshButton" Grid.Row="6" Grid.Column="1" Click="RefreshButton_Click">Refresh</Button>
+			<Button x:Name="EditButton" Grid.Row="6" Grid.Column="0" Click="EditButton_Click">Edit</Button>
+
+		</Grid>
+		
+	</Grid>
+
+</Window>
