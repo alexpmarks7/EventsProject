@@ -53,8 +53,8 @@ namespace EventsProjectTests
 				db.SaveChanges();
 			}
 		}
+		// Testing to ensure method that creates a new venue works
 		[Test]
-
 		public void CreateVenueTest()
 		{
 			using (var db = new EventsProjectContext())
@@ -65,6 +65,7 @@ namespace EventsProjectTests
 				Assert.AreEqual(eventsBefore + 1, eventsAfter);
 			}
 		}
+		// Testing to ensure you cannot create a venue with a negative capacity
 		[Test]
 		public void CreateVenueWithNegativeCapacityTest()
 		{
@@ -74,6 +75,7 @@ namespace EventsProjectTests
 				Assert.AreEqual(ex.Message, "A venue's capacity must not be negative");
 			}
 		}
+		// Testing to guarantee VenueId is exactly 5 chars long
 		[Test]
 		public void CreateVenueWithVenueIDTooSmallTest()
 		{
@@ -83,6 +85,7 @@ namespace EventsProjectTests
 				Assert.AreEqual(ex.Message, "A VenueId needs to be exactly 5 characters long");
 			}
 		}
+		// Testing to guarantee VenueId is exactly 5 chars long
 		[Test]
 		public void CreateVenueWithVenueIDTooLongTest()
 		{
@@ -92,6 +95,7 @@ namespace EventsProjectTests
 				Assert.AreEqual(ex.Message, "A VenueId needs to be exactly 5 characters long");
 			}
 		}
+		// Testing that a VenueId created is saved in uppercase
 		[Test]
 		public void CreateVenueWithLowerCaseLettersTest()
 		{
@@ -101,6 +105,7 @@ namespace EventsProjectTests
 				Assert.AreEqual(db.Venues.Where(v => v.VenueId == "OLDTR").FirstOrDefault().VenueId, "OLDTR");
 			}
 		}
+		// Testing that method to delete a venue does remove the venue from the database
 		[Test]
 		public void DeleteVenueTest()
 		{
@@ -122,6 +127,7 @@ namespace EventsProjectTests
 				Assert.AreEqual(oldCount - 1, newCount);
 			}
 		}
+		// Testing that you can change a venues capacity within the database
 		[Test]
 		public void EditVenueCapacityTest()
 		{
@@ -142,6 +148,7 @@ namespace EventsProjectTests
 				Assert.AreEqual(testVenueCapacity.Capacity, 70000);
 			}
 		}
+		// Testing that you can change a venues country
 		[Test]
 		public void EditVenueCountryTest()
 		{
@@ -162,6 +169,7 @@ namespace EventsProjectTests
 				Assert.AreEqual(testVenueCountry.Country, "USA");
 			}
 		}
+		// Testing that you can change a venues city
 		[Test]
 		public void EditVenueCityTest()
 		{
@@ -182,6 +190,7 @@ namespace EventsProjectTests
 				Assert.AreEqual(testVenueCity.City, "Birmingham");
 			}
 		}
+		// Testing that you can change a venues name
 		[Test]
 		public void EditVenueNameTest()
 		{

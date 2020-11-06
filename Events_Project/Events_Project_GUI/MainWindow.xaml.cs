@@ -30,6 +30,7 @@ namespace Events_Project_GUI
 			PopulateVenueDropBox();
 			PopulateEventDropBox();			
 		}
+		// populating the drop boxes with venues and events
 		private void PopulateVenueDropBox()
 		{
 			VenueDropBox.ItemsSource = _crudManager.RetrieveVenues();
@@ -47,6 +48,8 @@ namespace Events_Project_GUI
 		{
 			EventListBox.ItemsSource = _crudManager.RetrieveMusic();
 		}
+
+		// populating the venue text boxes with venue information
 		private void PopulateVenueFields()
 		{
 			if (_crudManager.SelectedVenue != null)
@@ -58,6 +61,7 @@ namespace Events_Project_GUI
 				VenueCapacityText.Text = _crudManager.SelectedVenue.Capacity.ToString();
 			}
 		}
+		// emptying all the info in the venue fields
 		private void ClearVenueFields()
 		{
 
@@ -68,14 +72,15 @@ namespace Events_Project_GUI
 			VenueCapacityText.Text = "";
 
 		}
-
+		//// methodology below is to interact with GUI buttons and boxes...
+		// room for refactoring here
 		private void AddVenueButton_Click(object sender, RoutedEventArgs e)
 		{
 			NewVenueWindow win1 = new NewVenueWindow();
 			win1.Show();
 		}
 
-
+		// button to call remove venue method, update the drop box and empty the venue text boxes
 		private void RemoveVenueButton_Click(object sender, RoutedEventArgs e)
 		{
 			if (VenueDropBox.SelectedItem != null)
@@ -87,7 +92,7 @@ namespace Events_Project_GUI
 			ClearVenueFields();
 
 		}
-
+		// button that refreshes venue box or if edit function is called allows edit to be completed
 		private void RefreshButton_Click(object sender, RoutedEventArgs e)
 		{
 			if (_isEditClicked == false)
@@ -110,7 +115,7 @@ namespace Events_Project_GUI
 			}
 
 		}
-
+		// edit button disables most of GUI, and changes refresh button to a confirm edit button
 		private void EditButton_Click(object sender, RoutedEventArgs e)
 		{
 
@@ -128,7 +133,7 @@ namespace Events_Project_GUI
 
 			}
 		}
-
+		//  method to show eith sport or music events dependent on what was selected
 		private void EventDropBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			if (EventDropBox.SelectedItem != null)
@@ -148,7 +153,7 @@ namespace Events_Project_GUI
 		{
 			
 		}
-
+		// method to populate venue text boxes with info from selcted venue
 		private void VenueDropBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			if (VenueDropBox.SelectedItem != null)

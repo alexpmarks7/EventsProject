@@ -29,6 +29,7 @@ namespace EventsProjectBusiness
 				return db.Venues.ToList();
 			}
 		}
+		// retrieving info from DB to populate GUI
 		public List<Event> RetrieveEvents()
 		{
 			using (var db = new EventsProjectContext())
@@ -81,7 +82,7 @@ namespace EventsProjectBusiness
 				}
 			}
 		}
-
+		// method to remove a venue
 		public void RemoveVenue(string venueIdToRemove)
 		{
 			using (var db = new EventsProjectContext())
@@ -91,7 +92,7 @@ namespace EventsProjectBusiness
 				db.SaveChanges();
 			}
 		}
-
+		// method to edt a venue, ensuring certain parameters are met
 		public void EditVenue(string venueId, string newVenueName, string newVenueCity, string newVenueCountry, int newVenueCapacity)
 		{
 			using (var db = new EventsProjectContext())
