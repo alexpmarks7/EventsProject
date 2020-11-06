@@ -78,34 +78,38 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 *Sprint Review*
 
-<img src="C:\GitHub\Main Project Images\startOfSprintOne.PNG" style="zoom:75%;" />
-
-Above is the project board at the start of sprint one.  All "Sprint One Goals" are "In Progress" to be checked as completed.  User Stories from "Sprint Backlog" to be moved into "In Progress" as they are being worked on.
-
-The start of the sprint began with defining my Acceptance Criteria for each User Story.  Next, the ERD for the database was created.
-
-<img src="C:\GitHub\Main Project Images\ERD.PNG" style="zoom:75%;" /> 
-
-This ERD was implemented and a database was built using the Model First approach
-
-User Stories were turned into functional methods within the business layer and all methods were tested.
-
-The GUI front end was built to implement the methods already written.
-
-By the end of the sprint, the project board was complete, with every User Story moved into the "Done" column
-
-![](C:\GitHub\Main Project Images\endOfSprintOne.PNG) 
-
-Above is the Project Board with most of the sprint completed, prior to being reviewed and moved into the done column.
+- sprint goal was achieved
+- all selected user stories were completed
+- all tests passing
+- basic GUI is functional
+  - one known bug: crashes when "Edit venue" button is pressed with no venue selected
+- documentation is up to date
 
 
 
 *Sprint Retrospective*
 
 - the sprint started slowly but progressed well, with a implementable GUI performing the methods required
-- more functionality could have been added to the business layer, to create a more "complete" GUI, closer to the expected final product
+- more functionality could have been added to the business layer, to create a more "complete" GUI, closer to the expected final product'
+- methods written thus far function as planned, with successful GUI interaction
 - planning and building the database was not trouble free.  Database may have to be redesigned in a further sprint
 - GUI layer needs better direction as to how it's final appearance will be - this required more thought and planning from the start
+- code could be refactored in places
 
 
 
+*Project Board: Start of Sprint One*
+
+![startOfSprintOne](C:\GitHub\Main Project Images\startOfSprintOne.PNG)
+
+
+
+*Project Board: End of Sprint One*
+
+![endOfSprintOne](C:\GitHub\Main Project Images\endOfSprintOne.PNG)
+
+
+
+*Entity Relationship Diagram: Start of Sprint One*
+
+![ERD](C:\GitHub\Main Project Images\ERD.PNG)

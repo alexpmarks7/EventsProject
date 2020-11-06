@@ -27,20 +27,18 @@ namespace Events_Project_GUI
 		public MainWindow()
 		{
 			InitializeComponent();
-			PopulateVenueBox();
-			PopulateEventDropBox();
-			//PopulateEventListBoxWithSport();
-			
+			PopulateVenueDropBox();
+			PopulateEventDropBox();			
 		}
-		private void PopulateVenueBox()
+		private void PopulateVenueDropBox()
 		{
-			VenueListBox.ItemsSource = _crudManager.RetrieveVenues();
+			VenueDropBox.ItemsSource = _crudManager.RetrieveVenues();
 		}
-		
 		private void PopulateEventDropBox()
 		{
 			EventDropBox.ItemsSource = _crudManager.RetrieveEvents();
 		}
+		// next 2 methods populate events based on the event type
 		private void PopulateEventListBoxWithSport()
 		{
 			EventListBox.ItemsSource = _crudManager.RetrieveSports();
@@ -71,15 +69,6 @@ namespace Events_Project_GUI
 
 		}
 
-		private void VenueSelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			if (VenueListBox.SelectedItem != null)
-			{
-				_crudManager.SetSelectedVenue(VenueListBox.SelectedItem);
-				PopulateVenueFields();
-			}
-		}
-
 		private void AddVenueButton_Click(object sender, RoutedEventArgs e)
 		{
 			NewVenueWindow win1 = new NewVenueWindow();
@@ -89,12 +78,12 @@ namespace Events_Project_GUI
 
 		private void RemoveVenueButton_Click(object sender, RoutedEventArgs e)
 		{
-			if (VenueListBox.SelectedItem != null)
+			if (VenueDropBox.SelectedItem != null)
 			{
 				var venueToRemove = _crudManager.SelectedVenue.VenueId;
 				_crudManager.RemoveVenue(venueToRemove);
 			}
-			PopulateVenueBox();
+			PopulateVenueDropBox();
 			ClearVenueFields();
 
 		}
@@ -103,7 +92,7 @@ namespace Events_Project_GUI
 		{
 			if (_isEditClicked == false)
 			{
-				PopulateVenueBox();
+				PopulateVenueDropBox();
 			}
 			if (_isEditClicked == true)
 			{
@@ -116,8 +105,7 @@ namespace Events_Project_GUI
 				VenueCountryText.IsReadOnly = true;
 				VenueCapacityText.IsReadOnly = true;
 				_isEditClicked = false;
-				PopulateVenueBox();
-				VenueListBox.IsEnabled = true;
+				PopulateVenueDropBox();
 				EditButton.IsEnabled = true;
 			}
 
@@ -136,7 +124,6 @@ namespace Events_Project_GUI
 				VenueCountryText.IsReadOnly = false;
 				VenueCapacityText.IsReadOnly = false;
 				_isEditClicked = true;
-				VenueListBox.IsEnabled = false;
 				EditButton.IsEnabled = false;
 
 			}
@@ -160,6 +147,15 @@ namespace Events_Project_GUI
 		private void EventsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			
+		}
+
+		private void VenueDropBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (VenueDropBox.SelectedItem != null)
+			{
+				_crudManager.SetSelectedVenue(VenueDropBox.SelectedItem);
+				PopulateVenueFields();
+			}
 		}
 	}
 }

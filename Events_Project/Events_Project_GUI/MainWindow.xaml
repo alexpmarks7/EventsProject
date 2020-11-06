@@ -16,15 +16,16 @@
 			<RowDefinition Height="30" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
+		<Grid Grid.Column="1" Grid.Row="0">
+			<ComboBox x:Name="VenueDropBox" Height="30" VerticalAlignment="Top" SelectionChanged="VenueDropBox_SelectionChanged"></ComboBox>
+		</Grid>
 		<Grid Grid.Column="0" Grid.Row="0">
 			<ComboBox x:Name="EventDropBox" Height="30" VerticalAlignment="Top" SelectionChanged="EventDropBox_SelectionChanged"></ComboBox>
 		</Grid>
 		<Grid Grid.Row="1" Grid.Column="0">
 			<ListBox x:Name="EventListBox" SelectionChanged="EventsListBox_SelectionChanged"></ListBox>
 		</Grid>
-		<Grid Grid.Row="1" Grid.Column="1">
-			<ListBox x:Name="VenueListBox" SelectionChanged="VenueSelectionChanged"></ListBox>
-		</Grid>
+		<Grid Grid.Row="1" Grid.Column="1"/>
 		<Grid Grid.Row="1" Grid.Column="2">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="*" />
