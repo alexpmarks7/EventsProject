@@ -90,11 +90,73 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 *Sprint Retrospective*
 
 - the sprint started slowly but progressed well, with a implementable GUI performing the methods required
+
 - more functionality could have been added to the business layer, to create a more "complete" GUI, closer to the expected final product'
+
 - methods written thus far function as planned, with successful GUI interaction
+
 - planning and building the database was not trouble free.  Database may have to be redesigned in a further sprint
+
 - GUI layer needs better direction as to how it's final appearance will be - this required more thought and planning from the start
+
 - code could be refactored in places
+
+  
+
+## *Sprint_Two*
+
+*Goals*
+
+**Sprint Two Goal**
+
+ - [x] Add acceptance criteria to this sprints user stories. Be more explicit with user stories
+
+ - [x] Plan vision for how completed GUI needs to look
+
+ - [x] Complete commenting not finished during sprint one
+
+ - [x] Review testing from sprint one, and ensure tests are complete
+
+ - [x] Add the sport type and music genre tables to my database
+
+ - [x] Methods written to add, remove and edit events
+
+ - [x] Ensure event methods interact with venues (an event needs a venue!)
+
+ - [x] GUI is updated to interact with event functionality
+
+ - [ ] Refactor code
+
+ - [ ] Ensure GUI runs completely bug free
+
+ - [ ] Document all bugs, and when debugged
+
+ - [ ] All code is well commented
+
+ - [x] Documentation is up-to-date and uploaded to GitHub
+
+   
+
+*Sprint Review*
+
+- sprint goal was not fully achieved
+- all selected user stories were completed
+- all tests passing
+- database was updated and provides a far better base to develop the app on
+- refactoring still needed, some debugging needed, some code could be better commented
+- GUI is nearly complete, functionality is good, bar a couple of bugs
+- documentation is up to date
+
+
+
+*Sprint Retrospective*
+
+- the sprint was successful, the extra weekend time was made good sue of
+- all methods written so far function well, with good GUI interaction
+- happy with the database, though in future iterations of the project would like to further develop the DB
+- GUI layers design was better planned out, and plans were put into place successfully
+- code could be refactored, but MVP should be achieved by the end of sprint 3
+- need to remember to document bugs, before and after fixed.  Will try to better implement in sprint 3
 
 
 
