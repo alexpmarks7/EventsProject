@@ -1984,7 +1984,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "EventsProject/1.0.0": {
+      "EventsProject2/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -1992,17 +1992,17 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9"
         },
         "compile": {
-          "bin/placeholder/EventsProject.dll": {}
+          "bin/placeholder/EventsProject2.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EventsProject.dll": {}
+          "bin/placeholder/EventsProject2.dll": {}
         }
       },
       "EventsProjectBusiness/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "EventsProject": "1.0.0"
+          "EventsProject2": "1.0.0"
         },
         "compile": {
           "bin/placeholder/EventsProjectBusiness.dll": {}
@@ -7092,15 +7092,15 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "EventsProject/1.0.0": {
+    "EventsProject2/1.0.0": {
       "type": "project",
-      "path": "../Events_Project/EventsProject.csproj",
-      "msbuildProject": "../Events_Project/EventsProject.csproj"
+      "path": "../EventsProject2/EventsProject2.csproj",
+      "msbuildProject": "../EventsProject2/EventsProject2.csproj"
     },
     "EventsProjectBusiness/1.0.0": {
       "type": "project",
-      "path": "../CRUDManager/EventsProjectBusiness.csproj",
-      "msbuildProject": "../CRUDManager/EventsProjectBusiness.csproj"
+      "path": "../EventsProjectBusiness/EventsProjectBusiness.csproj",
+      "msbuildProject": "../EventsProjectBusiness/EventsProjectBusiness.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7117,11 +7117,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProjectTests\\EventsProjectTests.csproj",
+      "projectUniqueName": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProjectTests\\EventsProjectTests.csproj",
       "projectName": "EventsProjectTests",
-      "projectPath": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProjectTests\\EventsProjectTests.csproj",
+      "projectPath": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProjectTests\\EventsProjectTests.csproj",
       "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProjectTests\\obj\\",
+      "outputPath": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProjectTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7137,8 +7137,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\GitHub\\Main_Project\\Events_Project\\CRUDManager\\EventsProjectBusiness.csproj": {
-              "projectPath": "C:\\GitHub\\Main_Project\\Events_Project\\CRUDManager\\EventsProjectBusiness.csproj"
+            "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProjectBusiness\\EventsProjectBusiness.csproj": {
+              "projectPath": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProjectBusiness\\EventsProjectBusiness.csproj"
             }
           }
         }

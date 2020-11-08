@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CRUDManager\EventsProjectBusiness.csproj" />
+    <ProjectReference Include="..\EventsProjectBusiness\EventsProjectBusiness.csproj" />
   </ItemGroup>
 
 </Project>

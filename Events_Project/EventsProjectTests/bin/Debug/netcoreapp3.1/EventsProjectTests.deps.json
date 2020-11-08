@@ -1432,18 +1432,18 @@
           }
         }
       },
-      "EventsProject/1.0.0": {
+      "EventsProject2/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9"
         },
         "runtime": {
-          "EventsProject.dll": {}
+          "EventsProject2.dll": {}
         }
       },
       "EventsProjectBusiness/1.0.0": {
         "dependencies": {
-          "EventsProject": "1.0.0"
+          "EventsProject2": "1.0.0"
         },
         "runtime": {
           "EventsProjectBusiness.dll": {}
@@ -2269,7 +2269,7 @@
       "path": "system.xml.xpath.xmldocument/4.3.0",
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
-    "EventsProject/1.0.0": {
+    "EventsProject2/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

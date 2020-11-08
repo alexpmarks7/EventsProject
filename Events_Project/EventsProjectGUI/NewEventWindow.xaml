@@ -1,0 +1,50 @@
+﻿<Window x:Class="EventsProjectGUI.NewEventWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventsProjectGUI"
+        mc:Ignorable="d"
+        Title="NewEventWindow" Height="250" Width="750">
+	<Grid>
+		<Grid.ColumnDefinitions >
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+
+
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Label x:Name="FixtureGenre" Grid.Column="0" Grid.Row="0"></Label>
+		<Label x:Name="SportMusic" Grid.Column="0" Grid.Row="1">Sport / Music</Label>
+		<Label x:Name="TypeSM" Grid.Column="0" Grid.Row="2"></Label>
+		<Label x:Name="Venue" Grid.Column="0" Grid.Row="5">Venue</Label>
+		<Label x:Name="Date" Grid.Column="2" Grid.Row="1">Date</Label>
+		<Label x:Name="Time" Grid.Column="2" Grid.Row="2">Time</Label>
+		<Label x:Name="TicketsSold" Grid.Column="2" Grid.Row="4">Tickets Sold</Label>
+		<Label x:Name="NewGenre" Grid.Column="0" Grid.Row="4"></Label>
+		<Label x:Name="NewGenreId" Grid.Column="0" Grid.Row="3"></Label>
+		
+		<TextBox x:Name="FixtureGenreInfo" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3"/>
+		<TextBox x:Name="DateInfo" Grid.Column="3" Grid.Row="1"/>
+		<TextBox x:Name="TimeInfo" Grid.Column="3" Grid.Row="2"/>
+		<TextBox x:Name="TicketsSoldInfo" Grid.Column="3" Grid.Row="4"/>
+		<TextBox x:Name="NewGenreInfo" Grid.Column="1" Grid.Row="4" Visibility="Hidden"/>
+		<TextBox x:Name="NewGenreIdInfo" Grid.Column="1" Grid.Row="3" Visibility="Hidden" />
+		
+		<ComboBox x:Name="NewVenue" MaxDropDownHeight="90" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="5" SelectionChanged="NewVenue_SelectionChanged"></ComboBox>
+		<ComboBox x:Name="SportMusicBox" MaxDropDownHeight="90" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="1" SelectionChanged="SportMusicBox_SelectionChanged"></ComboBox>
+		<ComboBox x:Name="TypeBox" MaxDropDownHeight="90" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="2" Visibility="Hidden" SelectionChanged="TypeBox_SelectionChanged"></ComboBox>
+		<Button x:Name="AddEvent" Grid.Column="3" Grid.Row="5" Click="AddEvent_Click">AddEvent</Button>
+
+
+	</Grid>
+</Window>
