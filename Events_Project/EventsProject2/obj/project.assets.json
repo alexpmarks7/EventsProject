@@ -5726,11 +5726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProject2\\EventsProject2.csproj",
+      "projectUniqueName": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProject2\\EventsProject2.csproj",
       "projectName": "EventsProject2",
-      "projectPath": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProject2\\EventsProject2.csproj",
+      "projectPath": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProject2\\EventsProject2.csproj",
       "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProject2\\obj\\",
+      "outputPath": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProject2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",

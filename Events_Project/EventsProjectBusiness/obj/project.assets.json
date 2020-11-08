@@ -5674,11 +5674,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProjectBusiness\\EventsProjectBusiness.csproj",
+      "projectUniqueName": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProjectBusiness\\EventsProjectBusiness.csproj",
       "projectName": "EventsProjectBusiness",
-      "projectPath": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProjectBusiness\\EventsProjectBusiness.csproj",
+      "projectPath": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProjectBusiness\\EventsProjectBusiness.csproj",
       "packagesPath": "C:\\Users\\alexp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProjectBusiness\\obj\\",
+      "outputPath": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProjectBusiness\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alexp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5694,8 +5694,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProject2\\EventsProject2.csproj": {
-              "projectPath": "C:\\Users\\alexp\\source\\repos\\EventsProject2\\EventsProject2\\EventsProject2.csproj"
+            "C:\\GitHub\\Main_Project\\Events_Project\\EventsProject2\\EventsProject2.csproj": {
+              "projectPath": "C:\\GitHub\\Main_Project\\Events_Project\\EventsProject2\\EventsProject2.csproj"
             }
           }
         }

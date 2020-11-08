@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\alexp\source\repos\EventsProject2\EventsProjectGUI\obj\Debug\netcoreapp3.1\
+C:\GitHub\Main_Project\Events_Project\EventsProjectGUI\obj\Debug\netcoreapp3.1\
 EventsProjectGUI
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\alexp\source\repos\EventsProject2\EventsProjectGUI\App.xaml
+C:\GitHub\Main_Project\Events_Project\EventsProjectGUI\App.xaml
 5-716365534
 
 9150108927
-219211196274
+219717190226
 MainWindow.xaml;MusicEventWindow.xaml;NewEventWindow.xaml;NewVenueWindow.xaml;SportEventWindow.xaml;
 
-True
+False
 
