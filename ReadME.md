@@ -336,7 +336,7 @@ Overall, I am quite proud of my first attempt at a 3 tier application.  The proj
 
 *Project Board: End of Sprint Three*
 
-![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/endOfSprintThree.PNG)
+
 
 
 
