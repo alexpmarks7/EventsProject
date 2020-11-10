@@ -260,6 +260,38 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 
 
+## **Project_Retrospective**
+
+**What went well:**
+
+- MVP was achieved
+- GUI layer is functional, and all methods implement interact with business and database layer successfully
+- all CRUD funtions were tested
+- documentation was kept up-to-date throughout, bar debugging
+
+
+
+**What could have been improved upon**
+
+- Code is not refactored
+  - could have made a better effort to keep code concise and refactor throughout the process
+- bugs and debugging should have been documented more frequently
+- planning before first sprint should have been more thorough
+  - GUI wasn't planned
+  - first ERD was not good enough, nor sufficient, for the project scope
+- testing could have been more thorough
+- GUI could update automatically, sometimes when closing a window the GUI only updates once you have done further operations
+
+
+
+**Moving forward**
+
+Given further sprints, the first thing I would do is refactor the code.  There are areas were code is repeated, and this isn't necessary.  I'd like to enhance my database, add more tables and make the business layer more functional.  I didn't manage to move beyond my MVP Project Backlog, so there are some user stories I'd like to be able to add to the functionality.  I need to learn to be more diligent with my commenting of code and documenting of any bugs that arise.
+
+Overall, I am quite proud of my first attempt at a 3 tier application.  The project could have run smoother, and the code could be better, but I am proud I managed to create my MVP and I am pleased with it's functionality. 
+
+
+
 *Project Board: Start of Sprint One*
 
 ![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/startOfSprintOne.PNG)
@@ -311,3 +343,9 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 *Class Diagram*
 
 ![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/ClassDiagram.PNG)
+
+
+
+
+
+***Note: all bugs are documented on GitHub under Issues***
