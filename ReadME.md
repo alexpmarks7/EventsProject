@@ -1,6 +1,6 @@
 ## Events Project
 
-An events application using Visual Studio, C#, SQL and Entity Framework
+An events application using Visual Studio, C#, SQL and Entity Framework  
 
 
 
