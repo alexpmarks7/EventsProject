@@ -12,7 +12,7 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 4. [Sprint One](#Sprint_One)
 5. [Sprint Two](#Sprint_Two)
 6. [Sprint Three](#Sprint_Three)
-7. [Project Retrospective](#Project_Retrospective)
+7. [Project_Retrospective](#Project_Retrospective)
 
 
 
@@ -24,21 +24,21 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 ## *Definition_of_Done*
 
-- [ ] Database is generated and populated
-- [ ] All MVP Project User Stories have been coded to be functional
-- [ ] All code is tested and refactored 
+- [x] Database is generated and populated
+- [x] All MVP Project User Stories have been coded to be functional
+- [ ] All code is tested and refactored   (*code is tested, but didn't manage to refactor*)
 
-- [ ] GUI front end is usable and interacts with all CRUD operations, and is bug free
+- [x] GUI front end is usable and interacts with all CRUD operations, and is bug free
 
-- [ ] Code is well commented and readable
+- [x] Code is well commented and readable
 
 - [ ] Product has been reviewed and approved
 
-- [ ] Class diagram is updated
+- [x] Class diagram is updated
 
-- [ ] ReadME.md file is written and clear
+- [x] ReadME.md file is written and clear
 
-- [ ] All documentation is uploaded to GitHub
+- [x] All documentation is uploaded to GitHub
 
 - [ ] Presentation is well planned and ready to be delivered
 
@@ -56,7 +56,7 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 ## *Sprint_One*
 
-*Goals*
+***Sprint One Goals**
 
 - [x] Add acceptance criteria to this sprints user stories
 
@@ -105,9 +105,7 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 ## *Sprint_Two*
 
-*Goals*
-
-**Sprint Two Goal**
+**Sprint Two Goals**
 
  - [x] Add acceptance criteria to this sprints user stories. Be more explicit with user stories
 
@@ -160,18 +158,168 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 
 
+## *Sprint_Two*
+
+**Sprint Two Goals**
+
+ - [x] Add acceptance criteria to this sprints user stories. Be more explicit with user stories
+
+ - [x] Plan vision for how completed GUI needs to look
+
+ - [x] Complete commenting not finished during sprint one
+
+ - [x] Review testing from sprint one, and ensure tests are complete
+
+ - [x] Add the sport type and music genre tables to my database
+
+ - [x] Methods written to add, remove and edit events
+
+ - [x] Ensure event methods interact with venues (an event needs a venue!)
+
+ - [x] GUI is updated to interact with event functionality
+
+ - [ ] Refactor code
+
+ - [ ] Ensure GUI runs completely bug free
+
+ - [ ] Document all bugs, and when debugged
+
+ - [ ] All code is well commented
+
+ - [x] Documentation is up-to-date and uploaded to GitHub
+
+   
+
+*Sprint Review*
+
+- sprint goal was not fully achieved
+- all selected user stories were completed
+- all tests passing
+- database was updated and provides a far better base to develop the app on
+- refactoring still needed, some debugging needed, some code could be better commented
+- GUI is nearly complete, functionality is good, bar a couple of bugs
+- documentation is up to date
+
+
+
+*Sprint Retrospective*
+
+- the sprint was successful, the extra weekend time was made good use of
+- all methods written so far function well, with good GUI interaction
+- happy with the database, though in future iterations of the project would like to further develop the DB
+- GUI layers design was better planned out, and plans were put into place successfully
+- code could be refactored, but MVP should be achieved by the end of sprint 3
+- need to remember to document bugs, before and after fixed.  Will try to better implement in sprint 3
+
+
+
+## Sprint_Three
+
+**Sprint Three Goals**
+
+ - [x] Add acceptance criteria to this sprints user stories
+
+ - [x] Methods for ticket sales added
+
+ - [x] Methods are well tested
+
+ - [x] GUI interacts with new methods
+
+ - [ ] Code refactored
+
+ - [x] GUI runs bug free
+
+ - [x] All bugs documented
+
+ - [x] Documentation is up-to-date and pushed to Github
+
+ - [ ] Presentation is planned with colleagues
+
+   
+
+*Sprint Review*
+
+- only sprint goal not achieved was the refactoring of the code
+- all selected user stories were completed
+- all tests passing
+- GUI was improved, better aesthetic and all functionality works
+- all bugs debugged and tested
+- code is commented
+- documentation is up to date and pushed to GitHub
+
+
+
+*Sprint Retrospective*
+
+- the sprint was successful
+- happy with the functionality of the methods and the GUI and DB interaction in the app
+- would have liked to have refactored the code, but time did not permit.  There is duplicate code, and areas where code could be better written
+- happy with having MVP by end of sprint three
+- bug identification and debugging documentation was far better
+- didn't manage to implement any of the further methods from the "Further Functionality Project Backlog"
+
+
+
+## **Project_Retrospective**
+
+
+
+
+
+
+
+
+
 *Project Board: Start of Sprint One*
 
-![](C:\GitHub\Main_Project\Main Project Images\startOfSprintOne.PNG)
+![]https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/startOfSprintOne.PNG 
 
 
 
 *Project Board: End of Sprint One*
 
-![](C:\GitHub\Main_Project\Main Project Images\endOfSprintOne.PNG)
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/endOfSprintOne.PNG)
 
 
 
 *Entity Relationship Diagram: Start of Sprint One*
 
-![](C:\GitHub\Main_Project\Main Project Images\ERD.PNG)
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/ERD.PNG)
+
+*Project Board: Start of Sprint Two*
+
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/startOfSprintTwo.PNG)
+
+
+
+*Project Board: End of Sprint Two*
+
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/endOfSprintTwo.PNG)
+
+
+
+*Updated ERD: Start of Sprint Two*
+
+
+
+![](C:\GitHub\Main_Project\Main Project Images\ERD_Updated.PNG)
+
+*Project Board: Start of Sprint Three*
+
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/startOfSprintThree.PNG)
+
+
+
+*Project Board: End of Sprint Three*
+
+
+
+
+
+
+
+*Class Diagram*
+
+
+
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/Class%Diagram.PNG)
