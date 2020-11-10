@@ -162,16 +162,16 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 *Project Board: Start of Sprint One*
 
-![](C:\GitHub\Main_Project\Main Project Images\startOfSprintOne.PNG)
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/startOfSprintOne.PNG)
 
 
 
 *Project Board: End of Sprint One*
 
-![](C:\GitHub\Main_Project\Main Project Images\endOfSprintOne.PNG)
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/endOfSprintOne.PNG)
 
 
 
 *Entity Relationship Diagram: Start of Sprint One*
 
-![](C:\GitHub\Main_Project\Main Project Images\ERD.PNG)
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/ERD.PNG)
