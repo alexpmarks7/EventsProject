@@ -29,6 +29,7 @@ namespace EventsProjectGUI
 		{
 			try
 			{
+				// esnuring all text fields have an entry
 				if (VenueIDText.Text != "" && VenueNameText.Text != "" && VenueCityText.Text != "" && VenueCountryText.Text != "" && VenueCapacityText.Text != "")
 				{
 					_CRUDManager.CreateVenue(VenueIDText.Text, VenueNameText.Text, VenueCityText.Text, VenueCountryText.Text, Int32.Parse(VenueCapacityText.Text));

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EventsProject.Venue">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAMAAAAAAACAAoAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Customisations\Venue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventsProject.EventType">
+    <Position X="8" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Customisations\EventType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EventsProject.Sport">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <AssociationLine Name="EventType" Type="EventsProject.EventType">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.393" Y="0.048" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAEAAAACAAEAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Customisations\Sport.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EventType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EventsProject.SportEvent">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAIAAAAAEAAAACAAABAiAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Customisations\SportEvent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Venue" />
+      <Property Name="Sport" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EventsProject.Music">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <AssociationLine Name="EventType" Type="EventsProject.EventType">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.36" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEEAIAAAAEAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Customisations\Music.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EventType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EventsProject.MusicEvent">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAEAAIAAAAAEEAAAAAAABIgAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Customisations\MusicEvent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Venue" />
+      <Property Name="Music" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

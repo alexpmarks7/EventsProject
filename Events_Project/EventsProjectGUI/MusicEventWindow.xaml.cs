@@ -68,6 +68,7 @@ namespace EventsProjectGUI
 			var musicEvent = _crudManager.SelectedMusicEvent;
 			if (_isClicked == false)
 			{
+				//  changing the GUI and forcing the user to confirm an edit
 				CityInfo.Visibility = Visibility.Hidden;
 				CountryInfo.Visibility = Visibility.Hidden;
 				CapacityInfo.Visibility = Visibility.Hidden;
@@ -84,6 +85,7 @@ namespace EventsProjectGUI
 			{
 				try
 				{
+					// changing submitted date and time into valid entries for a date time object and then using catch blocks to ensure all entries are valid
 					int year = DateTime.Parse(DateInfo.Text).Year;
 					var month = DateTime.Parse(DateInfo.Text).Month;
 					var day = DateTime.Parse(DateInfo.Text).Day;
@@ -128,7 +130,9 @@ namespace EventsProjectGUI
 		private void AddEvent_Click(object sender, RoutedEventArgs e)
 		{
 			try
-			{ int year = DateTime.Parse(DateInfo.Text).Year;
+			{ 
+				// date time entries to valid DateTime parameters
+				int year = DateTime.Parse(DateInfo.Text).Year;
 				var month = DateTime.Parse(DateInfo.Text).Month;
 				var day = DateTime.Parse(DateInfo.Text).Day;
 				var hour = DateTime.Parse(TimeInfo.Text).Hour;
@@ -152,6 +156,7 @@ namespace EventsProjectGUI
 
 		private void RemoveEvent_Click(object sender, RoutedEventArgs e)
 		{
+			// ensuring user actually wants to eelete an event
 			MessageBoxResult mbr = MessageBox.Show("Are you sure you want to remove this event?", "Warning", MessageBoxButton.YesNo);
 			switch (mbr)
 			{
@@ -166,6 +171,7 @@ namespace EventsProjectGUI
 		{
 			try
 			{
+				// trying to sell tickets, and updating tickets sold field.  Displaying a message if ticket sell was successful
 				var ticketsSold = Int32.Parse(SellTicketsInfo.Text);
 				_crudManager.SellMusicTickets(ticketsSold, VenueInfo.Text, _crudManager.SelectedMusicEvent);
 				MessageBox.Show($"Nice! You sold {SellTicketsInfo.Text} tickets for {ArtistInfo.Text} on {DateInfo.Text}");
@@ -175,6 +181,7 @@ namespace EventsProjectGUI
 			}
 			catch (Exception ex)
 			{
+				// error message if unable to sell tickets
 				MessageBox.Show(ex.Message);
 				SellTicketsInfo.Text = "";
 			}

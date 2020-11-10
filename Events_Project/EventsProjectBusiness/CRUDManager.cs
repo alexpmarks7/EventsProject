@@ -47,7 +47,7 @@ namespace EventsProjectBusiness
 				return db.Venues.ToList();
 			}
 		}
-		// retrieving info from DB to populate GUI
+		//// retrieving info from DB to populate GUI listboxes and combo boxes
 		public List<EventType> RetrieveEventTypes()
 		{
 			using (var db = new EventsProjectContext())
@@ -133,7 +133,7 @@ namespace EventsProjectBusiness
 				db.SaveChanges();
 			}
 		}
-		// method to edt a venue, ensuring certain parameters are met
+		// method to edit a venue, ensuring certain parameters are met
 		public void EditVenue(string venueId, string newVenueName, string newVenueCity, string newVenueCountry, int newVenueCapacity)
 		{
 			using (var db = new EventsProjectContext())
@@ -153,6 +153,7 @@ namespace EventsProjectBusiness
 				}
 			}
 		}
+		// method to add a sport event, ensuring tickets sold cannot exceed the capacity of the venue
 		public void AddSportEvent(string venueId, string sportId, string fixture, DateTime date, int ticketsSold)
 		{
 			using (var db = new EventsProjectContext())
@@ -177,6 +178,8 @@ namespace EventsProjectBusiness
 				}
 			}
 		}
+
+		// method to remove a sport event
 		public void RemoveSportEvent(int sportEventIDToRemove)
 		{
 			using (var db = new EventsProjectContext())
@@ -186,6 +189,8 @@ namespace EventsProjectBusiness
 				db.SaveChanges();
 			}
 		}
+
+		// method to edit a sport event, ensuring tickets sold cannot exceed capacity
 		public void EditSportEvent(int sportEventId, string venueName, string fixture, DateTime date, int ticketsSold)
 		{
 			using (var db = new EventsProjectContext())
@@ -209,6 +214,9 @@ namespace EventsProjectBusiness
 				}
 			}
 		}
+
+		// method to add a music event, ensuring tickets sold cannot exceed capacity
+
 		public void AddMusicEvent(string venueId, string musicId, string artist, DateTime date, int ticketsSold)
 		{
 			using (var db = new EventsProjectContext())
@@ -230,6 +238,8 @@ namespace EventsProjectBusiness
 				db.SaveChanges();
 			}
 		}
+
+		// method to remove a music event
 		public void RemoveMusicEvent(int musicEventIDToRemove)
 		{
 			using (var db = new EventsProjectContext())
@@ -240,6 +250,7 @@ namespace EventsProjectBusiness
 			}
 		}
 
+		// method to edit a music event, ensuring tickets sold cannot exceed capacity
 		public void EditMusicEvent(int musicEventId, string venueName, string artist, DateTime date, int ticketsSold)
 		{
 			using (var db = new EventsProjectContext())
@@ -262,38 +273,64 @@ namespace EventsProjectBusiness
 				}
 			}
 		}
-
+		// method to add a music type, ensuring it is of the right Id
 		public void AddMusicType(string musicTypeId, string musicTypeInfo)
 		{
 			using (var db = new EventsProjectContext())
 			{
-				var newMusicType = new Music()
+				if (musicTypeId.Length != 5)
 				{
-					EventTypeId = "MUSIC",
-					MusicId = musicTypeId,
-					Genre = musicTypeInfo
-				};
-				db.Musics.Add(newMusicType);
-				db.SaveChanges();
+					throw new ArgumentException("ID must be exactly 5 characters long");
+				}
+				if (db.Musics.Where(m => m.MusicId == musicTypeId).FirstOrDefault() != null)
+				{
+					throw new ArgumentException("ID must be unique");
+				}
+				else
+				{
+					var newMusicType = new Music()
+					{
+						EventTypeId = "MUSIC",
+						MusicId = musicTypeId.ToUpper(),
+						Genre = musicTypeInfo
+					};
+					db.Musics.Add(newMusicType);
+					db.SaveChanges();
+				}
 			}
 			
 		}
-
+		// method to add sport type, and ensure it's of correct fromat
 		public void AddSportType(string sportTypeId, string sportTypeInfo)
 		{
 			using (var db = new EventsProjectContext())
 			{
-				var newSportType = new Sport()
+				if (sportTypeId.Length != 5)
 				{
-					EventTypeId = "Sport",
-					SportId = sportTypeId,
-					SportName = sportTypeInfo
-				};
-				db.Sports.Add(newSportType);
-				db.SaveChanges();
+					throw new ArgumentException("ID must be exactly 5 characters long");
+				}
+				if (db.Sports.Where(m => m.SportId == sportTypeId).FirstOrDefault() != null)
+				{
+					throw new ArgumentException("ID must be unique");
+				}
+				else
+				{
+					var newSportType = new Sport()
+					{
+						EventTypeId = "Sport",
+						SportId = sportTypeId.ToUpper(),
+						SportName = sportTypeInfo
+					};
+					db.Sports.Add(newSportType);
+					db.SaveChanges();
+				}
+				
 			}
+			
 
 		}
+
+		//// methods to sell tickets and update DB so have the correct amount of tickets sold for an event
 		public void SellSportTickets(int numberOfTickets, string venue, SportEvent sportEvent)
 		{
 			using (var db = new EventsProjectContext())

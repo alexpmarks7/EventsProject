@@ -34,6 +34,7 @@ namespace EventsProjectGUI
 			SportMusicBox.ItemsSource = _crudManager.RetrieveEventTypes();
 		}
 
+		////  methods that change the GUI and functionality depending on whether we are adding a sport or music event
 		private void SportMusicBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			TypeBox.Visibility = Visibility.Visible;
@@ -70,6 +71,8 @@ namespace EventsProjectGUI
 				_crudManager.SetSelectedSportType(TypeBox.SelectedItem);
 			}
 		}
+
+		// ensuring we are adding the new event to the correct venue
 		private void NewVenue_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			if(NewVenue.SelectedItem != null)
@@ -93,13 +96,15 @@ namespace EventsProjectGUI
 		{
 			NewVenue.ItemsSource = _crudManager.RetrieveVenues();
 		}
-
+		// metgod to add the event
 		private void AddEvent_Click(object sender, RoutedEventArgs e)
 		{
 			try
 			{
 				var artist = FixtureGenreInfo.Text;
 				var ticketsSold = Int32.Parse(TicketsSoldInfo.Text);
+
+				// converting the entered date and time into correct format for DateTime object
 				int year = DateTime.Parse(DateInfo.Text).Year;
 				var month = DateTime.Parse(DateInfo.Text).Month;
 				var day = DateTime.Parse(DateInfo.Text).Day;
@@ -107,6 +112,7 @@ namespace EventsProjectGUI
 				var min = DateTime.Parse(TimeInfo.Text).Minute;
 				var dateTime = new DateTime(year, month, day, hour, min, 0);
 
+				// catch blocks to ensure everything submitted is valid
 				if (SportMusicBox.SelectedItem != null)
 				{
 					if (TypeBox.SelectedItem == null)
