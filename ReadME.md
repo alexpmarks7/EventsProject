@@ -272,7 +272,7 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 *Project Board: Start of Sprint One*
 
-![]https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/startOfSprintOne.PNG 
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/endOfSprintTwo.PNG)
 
 
 
@@ -300,9 +300,9 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 *Updated ERD: Start of Sprint Two*
 
+![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/ERD_Updated.PNG)
 
 
-![](C:\GitHub\Main_Project\Main Project Images\ERD_Updated.PNG)
 
 *Project Board: Start of Sprint Three*
 
