@@ -261,7 +261,8 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 <<<<<<< HEAD
 =======
 ![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/startOfSprintOne.PNG)
->>>>>>> fe1db1e18ad6b56b614a66f6667718c475a9f429
+
+
 
 
 ## **Project_Retrospective**
