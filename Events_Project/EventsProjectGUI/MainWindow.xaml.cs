@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using EventsProject;
 using EventsProjectBusiness;
 using EventsProjectGUI;
-
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace EventsProjectGUI
 {
@@ -54,15 +54,15 @@ namespace EventsProjectGUI
 		}
 		private void PopulateChosenEventListBox()
 		{
+
 			if (EventDropBox.SelectedItem.ToString() == "Sport")
 			{
 				ChosenEventListBox.ItemsSource = _crudManager.RetrieveSportEvents();
 			}
-			if(EventDropBox.SelectedItem.ToString() == "Music")
+			if (EventDropBox.SelectedItem.ToString() == "Music")
 			{
 				ChosenEventListBox.ItemsSource = _crudManager.RetrieveMusicEvents();
 			}
-
 		}
 
 
@@ -71,6 +71,8 @@ namespace EventsProjectGUI
 		{
 			if (_crudManager.SelectedVenue != null)
 			{
+				EditButton.IsEnabled = true;
+				RemoveVenueButton.IsEnabled = true;
 				VenueIDText.Text = _crudManager.SelectedVenue.VenueId;
 				VenueNameText.Text = _crudManager.SelectedVenue.VenueName;
 				VenueCityText.Text = _crudManager.SelectedVenue.City;
@@ -88,6 +90,10 @@ namespace EventsProjectGUI
 			VenueCountryText.Text = "";
 			VenueCapacityText.Text = "";
 
+		}
+		private void ClearChosenEventListBox()
+		{
+			ChosenEventListBox.ItemsSource = null;
 		}
 
 		//// methodology below is to interact with GUI buttons and boxes...
@@ -113,8 +119,6 @@ namespace EventsProjectGUI
 					case MessageBoxResult.Yes:
 						var venueToRemove = _crudManager.SelectedVenue.VenueId;
 						_crudManager.RemoveVenue(venueToRemove);
-						PopulateVenueDropBox();
-						PopulateChosenEventListBox();
 						ClearVenueFields();
 						break;
 				}
@@ -139,6 +143,8 @@ namespace EventsProjectGUI
 				VenueCityText.IsReadOnly = true;
 				VenueCountryText.IsReadOnly = true;
 				VenueCapacityText.IsReadOnly = true;
+				VenueDropBox.IsEnabled = true;
+				EventDropBox.IsEnabled = true;
 				_isEditClicked = false;
 				PopulateVenueDropBox();
 				EditButton.IsEnabled = true;
@@ -159,6 +165,8 @@ namespace EventsProjectGUI
 				VenueCityText.IsReadOnly = false;
 				VenueCountryText.IsReadOnly = false;
 				VenueCapacityText.IsReadOnly = false;
+				VenueDropBox.IsEnabled = false;
+				EventDropBox.IsEnabled = false;
 				_isEditClicked = true;
 				EditButton.IsEnabled = false;
 
@@ -172,10 +180,18 @@ namespace EventsProjectGUI
 				if (EventDropBox.SelectedItem.ToString() == "Sport")
 				{
 					PopulateEventListBoxWithSport();
+					if(ChosenEventListBox.Items != null)
+					{
+						ClearChosenEventListBox();
+					}
 				}
 				if (EventDropBox.SelectedItem.ToString() == "Music")
 				{
 					PopulateEventListBoxWithMusic();
+					if(ChosenEventListBox != null)
+					{
+						ClearChosenEventListBox();
+					}
 				}
 			}
 		}
@@ -223,6 +239,7 @@ namespace EventsProjectGUI
 					MusicEventWindow win1 = new MusicEventWindow(ChosenEventListBox.SelectedItem);
 					win1.ShowDialog();
 				}
+				ChosenEventListBox.SelectedItem = null;
 			}
 		}
 
@@ -230,6 +247,7 @@ namespace EventsProjectGUI
 		{
 			NewEventWindow win1 = new NewEventWindow();
 			win1.ShowDialog();
+
 		}
 	}
 }

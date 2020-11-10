@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EventsProjectGUI"
+        xmlns:local="clr-namespace:EventsProjectGUI" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
 	<Grid>
+		<Grid.Background>
+			<ImageBrush ImageSource="C:\GitHub\Main_Project\Main Project Images\background.jpg" Opacity="0.1"></ImageBrush>
+		</Grid.Background>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="*" />
@@ -16,17 +19,18 @@
 			<RowDefinition Height="30" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
+		<Rectangle Grid.Column="1" Grid.Row="0" Fill="White" /> 
 		<Grid Grid.Column="2" Grid.Row="0">
 			<ComboBox x:Name="VenueDropBox" Height="30" MaxDropDownHeight="90" VerticalAlignment="Top" SelectionChanged="VenueDropBox_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility ="Visible"></ComboBox>
 		</Grid>
 		<Grid Grid.Column="0" Grid.Row="0">
-			<ComboBox x:Name="EventDropBox" Height="30" VerticalAlignment="Top" SelectionChanged="EventDropBox_SelectionChanged"></ComboBox>
+			<ComboBox x:Name="EventDropBox" Height="30" VerticalAlignment="Top" SelectionChanged="EventDropBox_SelectionChanged" SelectedIndex="0"></ComboBox>
 		</Grid>
 		<Grid Grid.Row="1" Grid.Column="0">
-			<ListBox x:Name="EventsListBox" SelectionChanged="EventsListBox_SelectionChanged"></ListBox>
+			<ListBox x:Name="EventsListBox" SelectionChanged="EventsListBox_SelectionChanged" Background="Transparent" FontSize="14"></ListBox>
 		</Grid>
 		<Grid Grid.Row="1" Grid.Column="1">
-			<ListBox x:Name="ChosenEventListBox" SelectionChanged="ChosenEventListBox_SelectionChanged"></ListBox>
+			<ListBox x:Name="ChosenEventListBox" SelectionChanged="ChosenEventListBox_SelectionChanged" Background="Transparent" FontSize="14"></ListBox>
 		</Grid>
 		<Grid Grid.Row="1" Grid.Column="2">
 			<Grid.ColumnDefinitions>
@@ -43,23 +47,24 @@
 				<RowDefinition Height="*" />
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
-			<Label x:Name="VenueID" Grid.Row="0" Grid.Column="0">Venue ID</Label>
-			<Label x:Name="VenueName" Grid.Row="1" Grid.Column="0">Name</Label>
-			<Label x:Name="VenueCity" Grid.Row="2" Grid.Column="0">City</Label>
-			<Label x:Name="VenueCountry" Grid.Row="3" Grid.Column="0">Country</Label>
-			<Label x:Name="VenueCapacity" Grid.Row="4" Grid.Column="0">Capacity</Label>
+			<Label x:Name="VenueID" Grid.Row="0" Grid.Column="0" FontSize="18">Venue ID</Label>
+			<Label x:Name="VenueName" Grid.Row="1" Grid.Column="0" FontSize="18">Name</Label>
+			<Label x:Name="VenueCity" Grid.Row="2" Grid.Column="0" FontSize="18">City</Label>
+			<Label x:Name="VenueCountry" Grid.Row="3" Grid.Column="0" FontSize="18">Country</Label>
+			<Label x:Name="VenueCapacity" Grid.Row="4" Grid.Column="0" FontSize="18">Capacity</Label>
+			 
 
-			<TextBox x:Name="VenueIDText" Grid.Row="0" Grid.Column="1" IsReadOnly="True"></TextBox>
-			<TextBox x:Name="VenueNameText" Grid.Row="1" Grid.Column="1" IsReadOnly="True"></TextBox>
-			<TextBox x:Name="VenueCityText" Grid.Row="2" Grid.Column="1" IsReadOnly="True"></TextBox>
-			<TextBox x:Name="VenueCountryText" Grid.Row="3" Grid.Column="1" IsReadOnly="True"></TextBox>
-			<TextBox x:Name="VenueCapacityText" Grid.Row="4" Grid.Column="1" IsReadOnly="True"></TextBox>
+			<TextBox x:Name="VenueIDText" Grid.Row="0" Grid.Column="1" IsReadOnly="True" Opacity="0.55"></TextBox>
+			<TextBox x:Name="VenueNameText" Grid.Row="1" Grid.Column="1" IsReadOnly="True" Opacity="0.55"></TextBox>
+			<TextBox x:Name="VenueCityText" Grid.Row="2" Grid.Column="1" IsReadOnly="True" Opacity="0.55"></TextBox>
+			<TextBox x:Name="VenueCountryText" Grid.Row="3" Grid.Column="1" IsReadOnly="True" Opacity="0.55"></TextBox>
+			<TextBox x:Name="VenueCapacityText" Grid.Row="4" Grid.Column="1" IsReadOnly="True" Opacity="0.55"></TextBox>
 
 			<Button x:Name="AddVenueButton" Grid.Row="5" Grid.Column="0" Click="AddVenueButton_Click">Add Venue</Button>
-			<Button x:Name="RemoveVenueButton" Grid.Row="5" Grid.Column="1" Click="RemoveVenueButton_Click">Remove Venue</Button>
+			<Button x:Name="RemoveVenueButton" Grid.Row="5" Grid.Column="1" Click="RemoveVenueButton_Click" IsEnabled="False">Remove Venue</Button>
 			<Button x:Name="RefreshButton" Grid.Row="6" Grid.Column="1" Click="RefreshButton_Click">Refresh</Button>
-			<Button x:Name="EditButton" Grid.Row="6" Grid.Column="0" Click="EditButton_Click">Edit Venue</Button>
-			<Button x:Name="AddEvent" Grid.Row="7" Grid.Column="0" Click="AddEventButton_Click">Add Event</Button>
+			<Button x:Name="EditButton" Grid.Row="6" Grid.Column="0" Click="EditButton_Click" IsEnabled="False">Edit Venue</Button>
+			<Button x:Name="AddEvent" Grid.ColumnSpan="2" Grid.Row="7" Grid.Column="0" Click="AddEventButton_Click">Add Event</Button>
 
 		</Grid>
 

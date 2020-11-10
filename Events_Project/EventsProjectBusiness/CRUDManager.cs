@@ -157,16 +157,24 @@ namespace EventsProjectBusiness
 		{
 			using (var db = new EventsProjectContext())
 			{
-				var newSportEvent = new SportEvent()
+				var venueCapacity = db.Venues.Where(v => v.VenueId == venueId).Select(v => v.Capacity).FirstOrDefault();
+				if (ticketsSold > venueCapacity)
 				{
-					VenueId = venueId,
-					SportId = sportId,
-					Fixture = fixture,
-					dateTime = date,
-					TicketsSold = ticketsSold
-				};
-				db.SportEvents.Add(newSportEvent);
-				db.SaveChanges();
+					throw new ArgumentException("Tickets sold cannot exceed capacity");
+				}
+				else
+				{
+					var newSportEvent = new SportEvent()
+					{
+						VenueId = venueId,
+						SportId = sportId,
+						Fixture = fixture,
+						dateTime = date,
+						TicketsSold = ticketsSold
+					};
+					db.SportEvents.Add(newSportEvent);
+					db.SaveChanges();
+				}
 			}
 		}
 		public void RemoveSportEvent(int sportEventIDToRemove)
@@ -182,18 +190,34 @@ namespace EventsProjectBusiness
 		{
 			using (var db = new EventsProjectContext())
 			{
-				SelectedSportEvent = db.SportEvents.Where(se => se.SportEventId == sportEventId).FirstOrDefault();
-				SelectedSportEvent.VenueId = db.Venues.Where(v => v.VenueName == venueName).Select(v => v.VenueId).FirstOrDefault();
-				SelectedSportEvent.Fixture = fixture;
-				SelectedSportEvent.dateTime = date;
-				SelectedSportEvent.TicketsSold = ticketsSold;
-				db.SaveChanges();
+				if (ticketsSold > db.Venues.Where(v => v.VenueName == venueName).Select(v => v.Capacity).FirstOrDefault())
+				{
+					throw new ArgumentException("Tickets sold exceeds events capacity");
+				}
+				try
+				{
+					SelectedSportEvent = db.SportEvents.Where(se => se.SportEventId == sportEventId).FirstOrDefault();
+					SelectedSportEvent.VenueId = db.Venues.Where(v => v.VenueName == venueName).Select(v => v.VenueId).FirstOrDefault();
+					SelectedSportEvent.Fixture = fixture;
+					SelectedSportEvent.dateTime = date;
+					SelectedSportEvent.TicketsSold = ticketsSold;
+					db.SaveChanges();
+				}
+				catch (Exception)
+				{
+					
+				}
 			}
 		}
 		public void AddMusicEvent(string venueId, string musicId, string artist, DateTime date, int ticketsSold)
 		{
 			using (var db = new EventsProjectContext())
 			{
+				var venueCapacity = db.Venues.Where(v => v.VenueId == venueId).Select(v => v.Capacity).FirstOrDefault();
+				if (ticketsSold > venueCapacity)
+				{
+					throw new ArgumentException("Tickets sold cannot exceed capacity");
+				}
 				var newMusicEvent = new MusicEvent()
 				{
 					VenueId = venueId,
@@ -220,12 +244,22 @@ namespace EventsProjectBusiness
 		{
 			using (var db = new EventsProjectContext())
 			{
-				SelectedMusicEvent = db.MusicEvents.Where(me => me.MusicEventId == musicEventId).FirstOrDefault();
-				SelectedMusicEvent.VenueId = db.Venues.Where(v => v.VenueName == venueName).Select(v => v.VenueId).FirstOrDefault();
-				SelectedMusicEvent.Artist = artist;
-				SelectedMusicEvent.dateTime = date;
-				SelectedMusicEvent.TicketsSold = ticketsSold;
-				db.SaveChanges();
+				if (ticketsSold > db.Venues.Where(v => v.VenueName == venueName).Select(v => v.Capacity).FirstOrDefault())
+				{
+					throw new ArgumentException("Tickets sold exceeds events capacity");
+				}
+				try
+				{ SelectedMusicEvent = db.MusicEvents.Where(me => me.MusicEventId == musicEventId).FirstOrDefault();
+					SelectedMusicEvent.VenueId = db.Venues.Where(v => v.VenueName == venueName).Select(v => v.VenueId).FirstOrDefault();
+					SelectedMusicEvent.Artist = artist;
+					SelectedMusicEvent.dateTime = date;
+					SelectedMusicEvent.TicketsSold = ticketsSold;
+					db.SaveChanges();
+				}
+				catch (Exception)
+				{
+					
+				}
 			}
 		}
 
@@ -259,6 +293,41 @@ namespace EventsProjectBusiness
 				db.SaveChanges();
 			}
 
+		}
+		public void SellSportTickets(int numberOfTickets, string venue, SportEvent sportEvent)
+		{
+			using (var db = new EventsProjectContext())
+			{
+				var whichEvent = db.SportEvents.Where(se => se.SportEventId == sportEvent.SportEventId).FirstOrDefault();
+				var whichVenue = db.Venues.Where(v => v.VenueName == venue).FirstOrDefault();
+				if(whichEvent.TicketsSold + numberOfTickets <= whichVenue.Capacity)
+				{
+					whichEvent.TicketsSold += numberOfTickets;
+					db.SaveChanges();
+				}
+				else
+				{
+					throw new ArgumentException($"Ticket sales cannot exceed the events capacity");
+				}
+			}
+		}
+
+		public void SellMusicTickets(int numberOfTickets, string venue, MusicEvent musicEvent)
+		{
+			using (var db = new EventsProjectContext())
+			{
+				var whichEvent = db.MusicEvents.Where(se => se.MusicEventId == musicEvent.MusicEventId).FirstOrDefault();
+				var whichVenue = db.Venues.Where(v => v.VenueName == venue).FirstOrDefault();
+				if (whichEvent.TicketsSold + numberOfTickets <= whichVenue.Capacity)
+				{
+					whichEvent.TicketsSold += numberOfTickets;
+					db.SaveChanges();
+				}
+				else
+				{
+					throw new ArgumentException($"Ticket sales cannot exceed the events capacity");
+				}
+			}
 		}
 		static void Main(string[] args)
 		{

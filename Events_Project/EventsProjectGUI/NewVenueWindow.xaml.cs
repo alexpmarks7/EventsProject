@@ -27,10 +27,21 @@ namespace EventsProjectGUI
 
 		private void AddVenueButton_Click(object sender, RoutedEventArgs e)
 		{
-			if (VenueIDText.Text != "" && VenueNameText.Text != "" && VenueCityText.Text != "" && VenueCountryText.Text != "" && VenueCapacityText.Text != "")
+			try
 			{
-				_CRUDManager.CreateVenue(VenueIDText.Text, VenueNameText.Text, VenueCityText.Text, VenueCountryText.Text, Int32.Parse(VenueCapacityText.Text));
-				this.Close();
+				if (VenueIDText.Text != "" && VenueNameText.Text != "" && VenueCityText.Text != "" && VenueCountryText.Text != "" && VenueCapacityText.Text != "")
+				{
+					_CRUDManager.CreateVenue(VenueIDText.Text, VenueNameText.Text, VenueCityText.Text, VenueCountryText.Text, Int32.Parse(VenueCapacityText.Text));
+					this.Close();
+				}
+				else
+				{
+					MessageBox.Show("Invalid entry");
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
 			}
 		}
 	}

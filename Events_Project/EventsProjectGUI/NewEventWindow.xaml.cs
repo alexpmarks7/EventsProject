@@ -96,53 +96,72 @@ namespace EventsProjectGUI
 
 		private void AddEvent_Click(object sender, RoutedEventArgs e)
 		{
-			var artist = FixtureGenreInfo.Text;
-			var ticketsSold = Int32.Parse(TicketsSoldInfo.Text);
-			int year = DateTime.Parse(DateInfo.Text).Year;
-			var month = DateTime.Parse(DateInfo.Text).Month;
-			var day = DateTime.Parse(DateInfo.Text).Day;
-			var hour = DateTime.Parse(TimeInfo.Text).Hour;
-			var min = DateTime.Parse(TimeInfo.Text).Minute;
-			var dateTime = new DateTime(year, month, day, hour, min, 0);
-
-			if (SportMusicBox.SelectedItem != null)
+			try
 			{
+				var artist = FixtureGenreInfo.Text;
+				var ticketsSold = Int32.Parse(TicketsSoldInfo.Text);
+				int year = DateTime.Parse(DateInfo.Text).Year;
+				var month = DateTime.Parse(DateInfo.Text).Month;
+				var day = DateTime.Parse(DateInfo.Text).Day;
+				var hour = DateTime.Parse(TimeInfo.Text).Hour;
+				var min = DateTime.Parse(TimeInfo.Text).Minute;
+				var dateTime = new DateTime(year, month, day, hour, min, 0);
 
-
-				if (TypeBox.SelectedItem == null)
+				if (SportMusicBox.SelectedItem != null)
 				{
-					var id = NewGenreIdInfo.Text;
-					var info = NewGenreInfo.Text;
-					if (SportMusicBox.SelectedItem.ToString() == "Music")
+					if (TypeBox.SelectedItem == null)
 					{
-						_crudManager.AddMusicType(id, info);
+						var id = NewGenreIdInfo.Text;
+						var info = NewGenreInfo.Text;
+						if (SportMusicBox.SelectedItem.ToString() == "Music")
+						{
+							_crudManager.AddMusicType(id, info);
+							var venue = _crudManager.SelectedVenue;
+							try
+							{
+								_crudManager.AddMusicEvent(venue.VenueId, id, artist, dateTime, ticketsSold);
+								this.Close();
+							}
+							catch (Exception ex)
+							{
+								MessageBox.Show(ex.Message);
+							}
+						}
+						else if (SportMusicBox.SelectedItem.ToString() == "Sport")
+						{
+							_crudManager.AddSportType(id, info);
+							var venue = _crudManager.SelectedVenue;
+							try
+							{
+								_crudManager.AddSportEvent(venue.VenueId, id, artist, dateTime, ticketsSold);
+								this.Close();
+							}
+							catch (Exception ex)
+							{
+								MessageBox.Show(ex.Message);
+							}
+						}
+					}
+
+					else if (SportMusicBox.SelectedItem.ToString() == "Music")
+					{
 						var venue = _crudManager.SelectedVenue;
-						_crudManager.AddMusicEvent(venue.VenueId, id, artist, dateTime, ticketsSold);
+						var music = _crudManager.SelectedMusic;
+						_crudManager.AddMusicEvent(venue.VenueId, music.MusicId, artist, dateTime, ticketsSold);
 						this.Close();
 					}
-					else if(SportMusicBox.SelectedItem.ToString() == "Sport")
+					else if (SportMusicBox.SelectedItem.ToString() == "Sport")
 					{
-						_crudManager.AddSportType(id, info);
 						var venue = _crudManager.SelectedVenue;
-						_crudManager.AddSportEvent(venue.VenueId, id, artist, dateTime, ticketsSold);
+						var sport = _crudManager.SelectedSport;
+						_crudManager.AddSportEvent(venue.VenueId, sport.SportId, artist, dateTime, ticketsSold);
 						this.Close();
 					}
 				}
-
-				else if (SportMusicBox.SelectedItem.ToString() == "Music")
-				{
-					var venue = _crudManager.SelectedVenue;
-					var music = _crudManager.SelectedMusic;
-					_crudManager.AddMusicEvent(venue.VenueId, music.MusicId, artist, dateTime, ticketsSold);
-					this.Close();
-				}
-				else if (SportMusicBox.SelectedItem.ToString() == "Sport")
-				{
-					var venue = _crudManager.SelectedVenue;
-					var sport = _crudManager.SelectedSport;
-					_crudManager.AddSportEvent(venue.VenueId, sport.SportId, artist, dateTime, ticketsSold);
-					this.Close();
-				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Input was invalid");
 			}
 			
 		}

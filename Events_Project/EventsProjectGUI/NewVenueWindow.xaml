@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EventsProjectGUI"
         mc:Ignorable="d"
-        Title="New Venue Window" Height="450" Width="400">
+        Title="New Venue Window" Height="450" Width="400" WindowStartupLocation="CenterScreen">
 	<Grid>
+		<Grid.Background>
+			<ImageBrush ImageSource="C:\GitHub\Main_Project\Main Project Images\background2.jpg" Opacity="0.1"></ImageBrush>
+		</Grid.Background>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="*" />
@@ -19,19 +22,19 @@
 			<RowDefinition Height="*" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
-		<Label x:Name="VenueID" Grid.Row="0" Grid.Column="0">Venue ID</Label>
-		<Label x:Name="VenueName" Grid.Row="1" Grid.Column="0">Name</Label>
-		<Label x:Name="VenueCity" Grid.Row="2" Grid.Column="0">City</Label>
-		<Label x:Name="VenueCountry" Grid.Row="3" Grid.Column="0">Country</Label>
-		<Label x:Name="VenueCapacity" Grid.Row="4" Grid.Column="0">Capacity</Label>
+		<Label x:Name="VenueID" Grid.Row="0" Grid.Column="0" FontSize="18">Venue ID</Label>
+		<Label x:Name="VenueName" Grid.Row="1" Grid.Column="0" FontSize="18">Name</Label>
+		<Label x:Name="VenueCity" Grid.Row="2" Grid.Column="0" FontSize="18">City</Label>
+		<Label x:Name="VenueCountry" Grid.Row="3" Grid.Column="0" FontSize="18">Country</Label>
+		<Label x:Name="VenueCapacity" Grid.Row="4" Grid.Column="0" FontSize="18">Capacity</Label>
 
-		<TextBox x:Name="VenueIDText" Grid.Row="0" Grid.Column="1"></TextBox>
-		<TextBox x:Name="VenueNameText" Grid.Row="1" Grid.Column="1"></TextBox>
-		<TextBox x:Name="VenueCityText" Grid.Row="2" Grid.Column="1"></TextBox>
-		<TextBox x:Name="VenueCountryText" Grid.Row="3" Grid.Column="1"></TextBox>
-		<TextBox x:Name="VenueCapacityText" Grid.Row="4" Grid.Column="1"></TextBox>
+		<TextBox x:Name="VenueIDText" Grid.Row="0" Grid.Column="1" FontSize="18" Opacity="0.55"></TextBox>
+		<TextBox x:Name="VenueNameText" Grid.Row="1" Grid.Column="1" FontSize="18" Opacity="0.55"></TextBox>
+		<TextBox x:Name="VenueCityText" Grid.Row="2" Grid.Column="1" FontSize="18" Opacity="0.55"></TextBox>
+		<TextBox x:Name="VenueCountryText" Grid.Row="3" Grid.Column="1" FontSize="18" Opacity="0.55"></TextBox>
+		<TextBox x:Name="VenueCapacityText" Grid.Row="4" Grid.Column="1" FontSize="18" Opacity="0.55"></TextBox>
 
-		<Button x:Name="AddVenueButton" Grid.Row="5" Grid.Column="1" Click="AddVenueButton_Click">Add Venue</Button>
+		<Button x:Name="AddVenueButton" Grid.Row="5" Grid.Column="1" Click="AddVenueButton_Click" FontSize="18">Add Venue</Button>
 		
 	</Grid>
 </Window>

@@ -63,9 +63,9 @@ namespace EventsProjectGUI
 			var sportEvent = _crudManager.SelectedSportEvent;
 			if (_isClicked == false)
 			{
-				CityInfo.Background = Brushes.Red;
-				CountryInfo.Background = Brushes.Red;
-				CapacityInfo.Background = Brushes.Red;
+				CityInfo.Visibility = Visibility.Hidden;
+				CountryInfo.Visibility = Visibility.Hidden;
+				CapacityInfo.Visibility = Visibility.Hidden;
 				FixtureInfo.IsReadOnly = false;
 				VenueInfo.Visibility = Visibility.Hidden;
 				NewVenue.Visibility = Visibility.Visible;
@@ -77,46 +77,68 @@ namespace EventsProjectGUI
 			}
 			else if (_isClicked == true)
 			{
-
-				int year = DateTime.Parse(DateInfo.Text).Year;
-				var month = DateTime.Parse(DateInfo.Text).Month;
-				var day = DateTime.Parse(DateInfo.Text).Day;
-				var hour = DateTime.Parse(TimeInfo.Text).Hour;
-				var min = DateTime.Parse(TimeInfo.Text).Minute;
-				var dateTime = new DateTime(year, month, day, hour, min, 0);
-				using (var db = new EventsProjectContext())
+				try
 				{
-					try
+					int year = DateTime.Parse(DateInfo.Text).Year;
+					var month = DateTime.Parse(DateInfo.Text).Month;
+					var day = DateTime.Parse(DateInfo.Text).Day;
+					var hour = DateTime.Parse(TimeInfo.Text).Hour;
+					var min = DateTime.Parse(TimeInfo.Text).Minute;
+					var dateTime = new DateTime(year, month, day, hour, min, 0);
+
+					using (var db = new EventsProjectContext())
 					{
-						_crudManager.EditSportEvent(sportEvent.SportEventId, NewVenue.SelectedItem.ToString(), FixtureInfo.Text, dateTime, Int32.Parse(TicketsSoldInfo.Text));
-						this.Close();
+						if (NewVenue.SelectedItem != null)
+						{
+							try
+							{
+								_crudManager.EditSportEvent(sportEvent.SportEventId, NewVenue.SelectedItem.ToString(), FixtureInfo.Text, dateTime, Int32.Parse(TicketsSoldInfo.Text));
+								this.Close();
+								CityInfo.Visibility = Visibility.Visible;
+								CountryInfo.Visibility = Visibility.Visible;
+								CapacityInfo.Visibility = Visibility.Visible;
+								EditEvent.Content = "Edit Event";
+								VenueInfo.Visibility = Visibility.Visible;
+								NewVenue.Visibility = Visibility.Hidden;
+								_isClicked = false;
+								PopulateTextBoxes();
+							}
+							catch (Exception ex)
+							{
+								MessageBox.Show(ex.Message);
+							}
+						}
+						else
+						{
+							MessageBox.Show("No venue selected");
+						}
+
 					}
-					catch (Exception ex)
-					{
-						MessageBox.Show("Error");
-					}
-					CityInfo.Background = Brushes.Transparent;
-					CountryInfo.Background = Brushes.Transparent;
-					CapacityInfo.Background = Brushes.Transparent;
-					EditEvent.Content = "Edit Event";
-					VenueInfo.Visibility = Visibility.Visible;
-					NewVenue.Visibility = Visibility.Hidden;
-					_isClicked = false;
-					PopulateTextBoxes();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.Message);
 				}
 			}
 		}
 
 		private void AddEvent_Click(object sender, RoutedEventArgs e)
 		{
-			int year = DateTime.Parse(DateInfo.Text).Year;
-			var month = DateTime.Parse(DateInfo.Text).Month;
-			var day = DateTime.Parse(DateInfo.Text).Day;
-			var hour = DateTime.Parse(TimeInfo.Text).Hour;
-			var min = DateTime.Parse(TimeInfo.Text).Minute;
-			var dateTime = new DateTime(year, month, day, hour, min, 0);
-			_crudManager.AddSportEvent(NewVenue.SelectedItem.ToString(), _crudManager.SelectedSport.SportId, FixtureInfo.Text, dateTime, Int32.Parse(TicketsSoldInfo.Text));
-			this.Close();
+			try
+			{
+				int year = DateTime.Parse(DateInfo.Text).Year;
+				var month = DateTime.Parse(DateInfo.Text).Month;
+				var day = DateTime.Parse(DateInfo.Text).Day;
+				var hour = DateTime.Parse(TimeInfo.Text).Hour;
+				var min = DateTime.Parse(TimeInfo.Text).Minute;
+				var dateTime = new DateTime(year, month, day, hour, min, 0);
+				_crudManager.AddSportEvent(NewVenue.SelectedItem.ToString(), _crudManager.SelectedSport.SportId, FixtureInfo.Text, dateTime, Int32.Parse(TicketsSoldInfo.Text));
+				this.Close();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
 		}
 		private void SportBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
@@ -139,5 +161,22 @@ namespace EventsProjectGUI
 			
 		}
 
+		private void SellTickets_Click(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+				var ticketsSold = Int32.Parse(SellTicketsInfo.Text);
+				_crudManager.SellSportTickets(ticketsSold, VenueInfo.Text, _crudManager.SelectedSportEvent);
+				MessageBox.Show($"Nice! You sold {SellTicketsInfo.Text} tickets for {FixtureInfo.Text} on {DateInfo.Text}");
+				SellTicketsInfo.Text = "";
+				var newTickets = Int32.Parse(TicketsSoldInfo.Text);
+				TicketsSoldInfo.Text = (newTickets + ticketsSold).ToString();
+			}
+			catch(Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+				SellTicketsInfo.Text = "";
+			}
+		}
 	}
 }

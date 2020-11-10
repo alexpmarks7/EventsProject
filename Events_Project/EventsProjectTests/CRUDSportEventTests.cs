@@ -39,6 +39,7 @@ namespace EventsProjectTests
 				_crudManager.AddSportEvent("WMBLY", "FTBAL", "Aston Villa vs Chelsea", new DateTime(2020, 11, 07, 20, 00, 00), 40000);
 				var sportEventsAfter = db.SportEvents.Count();
 				Assert.AreEqual(sportEventsBefore + 1, sportEventsAfter);
+				currentSportEventId = db.SportEvents.Where(me => me.Fixture == "Aston Villa vs Chelsea").Select(me => me.SportEventId).FirstOrDefault();
 			}
 		}
 		[Test]
@@ -60,7 +61,6 @@ namespace EventsProjectTests
 				var sportId = db.SportEvents.Where(se => se.Fixture == "Aston Villa vs Chelsea").FirstOrDefault();
 				_crudManager.RemoveSportEvent(sportId.SportEventId);
 				var newCount = db.SportEvents.Count();
-				//currentSportEventId = sportId.SportEventId;
 				Assert.AreEqual(oldCount - 1, newCount);
 			}
 		}
@@ -79,9 +79,10 @@ namespace EventsProjectTests
 				};
 				db.SportEvents.Add(newSportEvent);
 				db.SaveChanges();
-				_crudManager.EditSportEvent(newSportEvent.SportEventId, "WMBLY", "Aston Villa vs Chelsea", new DateTime(2020, 11, 07, 20, 00, 00), 50000);
+				_crudManager.EditSportEvent(newSportEvent.SportEventId, "Wembley Stadium", "Aston Villa vs Chelsea", new DateTime(2020, 11, 07, 20, 00, 00), 50000);
 				var testSportEventTicketsSold= db.SportEvents.Where(se => se.SportEventId == newSportEvent.SportEventId).Select(s => new { s.TicketsSold }).FirstOrDefault();
 				Assert.AreEqual(testSportEventTicketsSold.TicketsSold, 50000);
+				currentSportEventId = db.SportEvents.Where(me => me.Fixture == "Aston Villa vs Chelsea").Select(me => me.SportEventId).FirstOrDefault();
 			}
 		}
 		[Test]
@@ -99,9 +100,10 @@ namespace EventsProjectTests
 				};
 				db.SportEvents.Add(newSportEvent);
 				db.SaveChanges();
-				_crudManager.EditSportEvent(newSportEvent.SportEventId, "WMBLY", "Aston Villa vs Chelsea", new DateTime(2020, 12, 07, 20, 00, 00), 40000);
+				_crudManager.EditSportEvent(newSportEvent.SportEventId, "Wembley Stadium", "Aston Villa vs Chelsea", new DateTime(2020, 12, 07, 20, 00, 00), 40000);
 				var testSportEventDate = db.SportEvents.Where(se => se.SportEventId == newSportEvent.SportEventId).Select(s => new { s.dateTime }).FirstOrDefault();
 				Assert.AreEqual(testSportEventDate.dateTime, new DateTime(2020, 12, 07, 20, 00, 00));
+				currentSportEventId = db.SportEvents.Where(me => me.Fixture == "Aston Villa vs Chelsea").Select(me => me.SportEventId).FirstOrDefault();
 			}
 		}
 		[Test]
@@ -119,7 +121,7 @@ namespace EventsProjectTests
 				};
 				db.SportEvents.Add(newSportEvent);
 				db.SaveChanges();
-				_crudManager.EditSportEvent(newSportEvent.SportEventId, "WMBLY", "Aston Villa vs Arsenal", new DateTime(2020, 11, 07, 20, 00, 00), 40000);
+				_crudManager.EditSportEvent(newSportEvent.SportEventId, "Wembley Stadium", "Aston Villa vs Arsenal", new DateTime(2020, 11, 07, 20, 00, 00), 40000);
 				var testSportEventFixture = db.SportEvents.Where(se => se.SportEventId == newSportEvent.SportEventId).Select(s => new { s.Fixture, s.SportEventId }).FirstOrDefault();
 				currentSportEventId = testSportEventFixture.SportEventId;
 				Assert.AreEqual(testSportEventFixture.Fixture, "Aston Villa vs Arsenal");
@@ -144,6 +146,7 @@ namespace EventsProjectTests
 				_crudManager.EditSportEvent(newSportEvent.SportEventId, "Wembley Arena", "Aston Villa vs Chelsea", new DateTime(2020, 11, 07, 20, 00, 00), 10000);
 				var testSportEventVenueId = db.SportEvents.Where(se => se.SportEventId == newSportEvent.SportEventId).Select(s => new { s.VenueId }).FirstOrDefault();
 				Assert.AreEqual(testSportEventVenueId.VenueId, "WBLAR");
+				currentSportEventId = db.SportEvents.Where(me => me.Fixture == "Aston Villa vs Chelsea").Select(me => me.SportEventId).FirstOrDefault();
 			}
 		}
 

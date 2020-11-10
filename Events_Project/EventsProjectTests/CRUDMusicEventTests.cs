@@ -39,6 +39,7 @@ namespace EventsProjectTests
 				_crudManager.AddMusicEvent("WMBLY", "_POP_", "Beyonce", new DateTime(2020, 11, 07, 20, 00, 00), 40000);
 				var musicEventsAfter = db.MusicEvents.Count();
 				Assert.AreEqual(musicEventsBefore + 1, musicEventsAfter);
+				currentMusicEventId = db.MusicEvents.Where(me => me.Artist == "Beyonce").Select(me => me.MusicEventId).FirstOrDefault();
 			}
 		}
 		[Test]
@@ -75,13 +76,14 @@ namespace EventsProjectTests
 					MusicId = "_POP_",
 					Artist = "Beyonce",
 					dateTime = new DateTime(2020, 11, 07, 20, 00, 00),
-					TicketsSold = 40000
+					TicketsSold = 0
 				};
 				db.MusicEvents.Add(newMusicEvent);
 				db.SaveChanges();
-				_crudManager.EditMusicEvent(newMusicEvent.MusicEventId, "WMBLY", "Beyonce", new DateTime(2020, 11, 07, 20, 00, 00), 50000);
+				_crudManager.EditMusicEvent(newMusicEvent.MusicEventId, "Wembley Stadium", "Beyonce", new DateTime(2020, 11, 07, 20, 00, 00), 1000);
 				var testMusicEventTicketsSold = db.MusicEvents.Where(se => se.MusicEventId == newMusicEvent.MusicEventId).Select(s => new { s.TicketsSold }).FirstOrDefault();
-				Assert.AreEqual(testMusicEventTicketsSold.TicketsSold, 50000);
+				Assert.AreEqual(testMusicEventTicketsSold.TicketsSold, 1000);
+				currentMusicEventId = db.MusicEvents.Where(me => me.Artist == "Beyonce").Select(me => me.MusicEventId).FirstOrDefault();
 			}
 		}
 		[Test]
@@ -99,9 +101,10 @@ namespace EventsProjectTests
 				};
 				db.MusicEvents.Add(newMusicEvent);
 				db.SaveChanges();
-				_crudManager.EditMusicEvent(newMusicEvent.MusicEventId, "WMBLY", "Beyonce", new DateTime(2020, 12, 07, 20, 00, 00), 40000);
+				_crudManager.EditMusicEvent(newMusicEvent.MusicEventId, "Wembley Stadium", "Beyonce", new DateTime(2020, 12, 07, 20, 00, 00), 40000);
 				var testMusicEventDate = db.MusicEvents.Where(se => se.MusicEventId == newMusicEvent.MusicEventId).Select(s => new { s.dateTime }).FirstOrDefault();
 				Assert.AreEqual(testMusicEventDate.dateTime, new DateTime(2020, 12, 07, 20, 00, 00));
+				currentMusicEventId = db.MusicEvents.Where(me => me.Artist == "Beyonce").Select(me => me.MusicEventId).FirstOrDefault();
 			}
 		}
 		[Test]
@@ -119,7 +122,7 @@ namespace EventsProjectTests
 				};
 				db.MusicEvents.Add(newMusicEvent);
 				db.SaveChanges();
-				_crudManager.EditMusicEvent(newMusicEvent.MusicEventId, "WMBLY", "Kasabian", new DateTime(2020, 11, 07, 20, 00, 00), 40000);
+				_crudManager.EditMusicEvent(newMusicEvent.MusicEventId, "Wembley Stadium", "Kasabian", new DateTime(2020, 11, 07, 20, 00, 00), 40000);
 				var testMusicEventFixture = db.MusicEvents.Where(se => se.MusicEventId == newMusicEvent.MusicEventId).Select(s => new { s.Artist, s.MusicEventId }).FirstOrDefault();
 				currentMusicEventId = testMusicEventFixture.MusicEventId;
 				Assert.AreEqual(testMusicEventFixture.Artist, "Kasabian");
@@ -144,6 +147,7 @@ namespace EventsProjectTests
 				_crudManager.EditMusicEvent(newMusicEvent.MusicEventId, "Wembley Arena", "Beyonce", new DateTime(2020, 11, 07, 20, 00, 00), 10000);
 				var testMusicEventVenueId = db.MusicEvents.Where(se => se.MusicEventId == newMusicEvent.MusicEventId).Select(s => new { s.VenueId }).FirstOrDefault();
 				Assert.AreEqual(testMusicEventVenueId.VenueId, "WBLAR");
+				currentMusicEventId = db.MusicEvents.Where(me => me.Artist == "Beyonce").Select(me => me.MusicEventId).FirstOrDefault();
 			}
 		}
 
