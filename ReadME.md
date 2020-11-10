@@ -272,41 +272,43 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 *Project Board: Start of Sprint One*
 
-![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/endOfSprintTwo.PNG)
+
 
 
 
 *Project Board: End of Sprint One*
 
-![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/endOfSprintOne.PNG)
+
 
 
 
 *Entity Relationship Diagram: Start of Sprint One*
 
-![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/ERD.PNG)
+
+
+
 
 *Project Board: Start of Sprint Two*
 
-![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/startOfSprintTwo.PNG)
+
 
 
 
 *Project Board: End of Sprint Two*
 
-![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/endOfSprintTwo.PNG)
+
 
 
 
 *Updated ERD: Start of Sprint Two*
 
-![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/ERD_Updated.PNG)
+
 
 
 
 *Project Board: Start of Sprint Three*
 
-![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/startOfSprintThree.PNG)
+
 
 
 
@@ -316,10 +318,7 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 
 
-
-
 *Class Diagram*
 
 
 
-![](https://github.com/alexpmarks7/EventsProject/blob/master/Main%20Project%20Images/Class%Diagram.PNG)
