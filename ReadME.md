@@ -6,7 +6,7 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 ## *Table of Contents*
 
-1. [Project Goal](#Project Goal)
+1. [Project Goal](#Project_Goal)
 2. [Definition of Done](#Definition_of_Done)
 3. [User Definition of Done](#User_Definition_of_Done)
 4. [Sprint One](<#Sprint One>)
