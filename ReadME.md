@@ -9,7 +9,7 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 1. [Project Goal](<#Project Goal>)
 2. [Definition of Done](#Definition_of_Done)
 3. [User Definition of Done](#User_Definition_of_Done)
-4. [Sprint One](#Sprint_One)
+4. [Sprint One](<#Sprint One>)
 5. [Sprint Two](#Sprint_Two)
 6. [Sprint Three](#Sprint_Three)
 7. [Project_Retrospective](#Project_Retrospective)
@@ -54,7 +54,7 @@ An events application using Visual Studio, C#, SQL and Entity Framework
 
 
 
-## *Sprint_One*
+## *Sprint One*
 
 ***Sprint One Goals**
 
